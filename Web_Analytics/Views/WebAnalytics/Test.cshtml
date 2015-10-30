@@ -1,0 +1,227 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.20.js"></script>
+    <script src="~/Js/test.js"></script>
+</head>
+<body>
+    <form>
+
+        <div>
+
+            <input type="text" value="" id="txtName" onblur="get()"/>
+            <input type="text" value="" id="txtAge" />
+            <input type="radio" id="sex" />
+            <input type="checkbox" id="chkTEst" />
+            <select id="Region">
+                <option>--Select--</option>
+            </select>
+            <input type="button" id="btnTEST" onclick="return getCount(this.value)" value="Code" />
+            <input type="submit" id="btnSiub" onclick="return getCount(this.value)" value="Corrupt" />
+
+        </div>
+        <div>
+
+
+            <input type="submit" id="nav" onclick="return getCount(this.value)" value="test" />
+            <input type="submit" id="summa" onclick="return getCount(this.value)" value="display" />
+            <input type="button" id="test" value="just" onclick="return getCount(this.value)" />
+            <input type="button" id="link" value="Alert" onclick="show()" />
+        </div>
+    </form>
+    <script>
+        var countvalue = [];
+        var textcountValue = [];
+        var optioncountvalue = [];
+        var buttoncountvalue = [];
+        var starttime = "";
+        var endtime = "";
+        $(document).ready(function () {
+           
+            var firstInput = document.getElementsByTagName('input')
+            for (var i = 0; i < firstInput.length; i++) {
+                if (firstInput[i].type == "text") {
+                    $('#' + firstInput[i].id).addClass("textCount");
+                   //document.getElementById(firstInput[i].id).setAttribute("onblur", "textcount(this)");
+                }
+                else if (firstInput[i].type == "radio") {
+                    $('#' + firstInput[i].id).addClass("optionCount");
+                }
+                else if (firstInput[i].type == "checkbox") {
+                    $('#' + firstInput[i].id).addClass("optionCount");
+                }
+                else if (firstInput[i].type == "button") {
+                    if (firstInput[i].id != "link")
+                    $('#' + firstInput[i].id).addClass("buttonCount");
+                }
+                else if (firstInput[i].type == "submit") {
+                    if(firstInput[i].id!="link")
+                    $('#' + firstInput[i].id).addClass("buttonCount");
+                }
+                else if (firstInput[i].type == "select") {
+                    $('#' + firstInput[i].id).addClass("dropCount");
+                }
+                else if (firstInput[i].type == "multiline") {
+                    $('#' + firstInput[i].id).addClass("textCount");
+                }
+            }
+            starttime = new Date();
+            $(".textCount").blur(function () {
+                debugger;
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                var type = $(this).attr("type");
+                if($("#"+id).is(':focus')){
+                    for (var i = 0; i == i; i++) {
+                        if (textcountValue[i] == undefined) {
+                            textcountValue[i] = id + "~" + 1;
+                            break;
+                        }
+                        else {
+                            var str = textcountValue[i];
+                            var res = str.split("~");
+                            if (res[0] == id) {
+                                textcountValue[i] = id + "~" + (parseInt(res[1]) + 1);
+                                break;
+                            }
+                        }
+                    }
+                }
+            });
+            function get() {
+                debugger;
+                var a = 10;
+            }
+            function textCount(val) {
+                debugger;
+                var a = val;
+            }
+            $(".optionCount").change(function () {
+                debugger;
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                var type = $(this).attr("type");
+                
+                for (var i = 0; i == i; i++) {
+                    if (optioncountvalue[i] == undefined) {
+                        optioncountvalue[i] = val + "~" + 1;
+                        break;
+                    }
+                    else {
+                        var str = optioncountvalue[i];
+                        var res = str.split("~");
+                        if (res[0] == val) {
+                            optioncountvalue[i] = id + "~" + (parseInt(res[1]) + 1);
+                            break;
+                        }
+                    }
+                }
+            });
+            $(".buttonCount").click(function () {
+                
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                var type = $(this).attr("type");
+                for (var i = 0; i == i; i++) {
+                    if (buttoncountvalue[i] == undefined) {
+                        buttoncountvalue[i] = val + "~" + 1;
+                        break;
+                    }
+                    else {
+                        var str = buttoncountvalue[i];
+                        var res = str.split("~");
+                        if (res[0] == val) {
+                            buttoncountvalue[i] = val + "~" + (parseInt(res[1]) + 1);
+                            break;
+                        }
+                    }
+                }
+            });
+            $(".dropCount").change(function () {
+                debugger;
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                var type = $(this).attr("type");
+            });
+            
+            //starttime = date.getTime();
+
+        });
+        function show() {
+            debugger;
+            endtime = new Date();
+            var length = countvalue.length;
+            var count = "";
+            for (var i = 0; i < length; i++) {
+                count = count + "--" + countvalue[i];
+            }
+            var buttoncount = "";
+            for (var i = 0; i < length; i++) {
+                buttoncount = buttoncount + "--" + buttoncountvalue[i];
+            }
+            var shours = starttime.getHours();
+            var sminutes = starttime.getMinutes();
+            var sseconds = starttime.getSeconds();
+            var ehours = endtime.getHours();
+            var eminutes = endtime.getMinutes();
+            var eseconds = endtime.getSeconds();
+            if (shours < ehours) {
+                if (eminutes < sminutes) {
+                    sminutes = (60 - sminutes) + eminutes;
+                }
+                else {
+                    sminutes = eminutes - sminutes;
+
+                }
+            }
+            else {
+                sminutes = eminutes - sminutes;
+            }
+            if (eminutes < sminutes && (ehours - shours)==1) {
+                shours = 0;
+            }
+            else
+                shours = ehours - shours;
+            var timeDiff = shours + " Hours:" + sminutes + " Minutes";
+            count = count + "// Time Difference" + timeDiff + "//  Button count" + buttoncount;
+            alert(count);
+        }
+        function getCount(val) {
+
+            for (var i = 0; i == i; i++) {
+                if (countvalue[i] == undefined) {
+                    countvalue[i] = val + "~" + 1;
+                    break;
+                }
+                else {
+                    var str = countvalue[i];
+                    var res = str.split("~");
+                    if (res[0] == val) {
+                        countvalue[i] = val + "~" + (parseInt(res[1]) + 1);
+                        break;
+                    }
+                }
+            }
+            return false;
+        }
+
+        //$(".textCount").blur(function () {
+        //    debugger;
+        //    var val = $(this).val();
+        //    var id = $(this).attr("id");
+        //});
+
+
+    </script>
+</body>
+</html>
