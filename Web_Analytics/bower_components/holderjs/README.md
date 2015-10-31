@@ -95,7 +95,7 @@ Placeholders using a custom font are rendered using canvas by default, due to SV
 
 ```html
 <head>
-<link href="http://.../font-awesome.css" rel="stylesheet" class="holderjs">
+<link href="http://.~/font-awesome.css" rel="stylesheet" class="holderjs">
 </head>
 <body>
 <object data="holder.js/300x200/font:FontAwesome"></object>

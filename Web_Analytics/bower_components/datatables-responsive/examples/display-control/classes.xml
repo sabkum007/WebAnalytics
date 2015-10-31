@@ -8,7 +8,7 @@
 
 $(document).ready(function() {
 	$('#example').DataTable( {
-		"ajax": "../../../../examples/ajax/data/objects.txt",
+		"ajax": "~/~/~/~/examples/ajax/data/objects.txt",
 		"columns": [
 			{ "data": "name" },
 			{ "data": "position" },

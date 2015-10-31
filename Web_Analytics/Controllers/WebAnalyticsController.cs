@@ -13,7 +13,7 @@ namespace Web_Analytics.Controllers
 
         public ActionResult Index()
         {
-            return View("Test");
+            return View("Index");
         }
         public ActionResult TestPage()
         {

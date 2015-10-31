@@ -1,0 +1,687 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.20.js"></script>
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="~/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","WebAnalytics")"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="href="@Url.Action("WebAnalytics", "movies")"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("WebAnalytics", "movies")"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Forms</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Basic Form Elements
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Text Input</label>
+                                            <input type ="text" id="Example" value="">                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Text area</label>
+                                            <textarea id="TextArea"  rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Checkboxes</label>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="CheckBox1" value="">Checkbox 1
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="CheckBox2" value="">Checkbox 2
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="CheckBox3" value="">Checkbox 3
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Radio Buttons</label>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Selects</label>
+                                            <select id="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Multiple Selects</label>
+                                            <select multiple  id="MultiSelect">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        <input type="button" id="btnSubmit" value="submit" />
+                                        <input type="button" id="btnReset" value="Reset" />
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="~/dist/js/sb-admin-2.js"></script>
+    <script>
+        var countvalue = [];
+        var textcountValue = [];
+        var optioncountvalue = [];
+        var buttoncountvalue = [];
+        var starttime = "";
+        var endtime = "";
+        var commonVariable = "";
+        var firstInput;
+        var areainput;
+        var loop = 0;
+        var textcount = 0;
+        window.onbeforeunload = confirmExit;
+        function confirmExit() {
+            debugger;
+            endtime = new Date();
+            var length = countvalue.length;
+            var count = "";
+            for (var i = 0; i < length; i++) {
+                count = count + "--" + countvalue[i];
+            }
+            var buttoncount = "";
+            for (var i = 0; i < length; i++) {
+                buttoncount = buttoncount + "--" + buttoncountvalue[i];
+            }
+            var shours = starttime.getHours();
+            var sminutes = starttime.getMinutes();
+            var sseconds = starttime.getSeconds();
+            var ehours = endtime.getHours();
+            var eminutes = endtime.getMinutes();
+            var eseconds = endtime.getSeconds();
+            var hostName="";
+            var pageName = "";
+            if (shours < ehours) {
+                if (eminutes < sminutes) {
+                    sminutes = (60 - sminutes) + eminutes;
+                }
+                else {
+                    sminutes = eminutes - sminutes;
+
+                }
+            }
+            else {
+                sminutes = eminutes - sminutes;
+            }
+            if (eminutes < sminutes && (ehours - shours) == 1) {
+                shours = 0;
+            }
+            else
+                shours = ehours - shours;
+            var timeDiff = shours + " Hours:" + sminutes + " Minutes";
+            count = count + "// Time Difference" + timeDiff + "//  Button count" + buttoncount;
+            alert(count);
+            
+        }
+        $(document).ready(function () {
+            hostName = window.location.hostname;
+            pageName = $(document).find("title").text();
+             firstInput = document.getElementsByTagName('input')
+            debugger;
+             areainput = document.getElementsByTagName('textarea')
+            for (var i = 0; i < areainput.length; i++) {
+                $('#' + areainput[i].id).addClass("textCount");
+                textcount++;
+            }
+           var selectinput = document.getElementsByTagName('select')
+            for (var i = 0; i < areainput.length; i++) {
+                $('#' + selectinput[i].id).addClass("optionCount");
+                
+            }
+
+            for (var i = 0; i < firstInput.length; i++) {
+                if (firstInput[i].type == "text") {
+                    $('#' + firstInput[i].id).addClass("textCount");
+                    textcount++;
+                    //document.getElementById(firstInput[i].id).setAttribute("onblur", "textcount(this)");
+                }
+               
+                else if (firstInput[i].type == "radio") {
+                    $('#' + firstInput[i].id).addClass("optionCount");
+                }
+                else if (firstInput[i].type == "checkbox") {
+                    $('#' + firstInput[i].id).addClass("optionCount");
+                }
+                else if (firstInput[i].type == "button") {
+                    if (firstInput[i].id != "link")
+                        $('#' + firstInput[i].id).addClass("buttonCount");
+                }
+                else if (firstInput[i].type == "submit") {
+                    if (firstInput[i].id != "link")
+                        $('#' + firstInput[i].id).addClass("buttonCount");
+                }
+                else if (firstInput[i].type == "select") {
+                    $('#' + firstInput[i].id).addClass("dropCount");
+                }
+                else if (firstInput[i].type == "multiline") {
+                    $('#' + firstInput[i].id).addClass("textCount");
+                }
+            }
+            starttime = new Date();
+            $(".textCount").blur(function () {
+                loop=loop+1;
+                debugger;
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                if (commonVariable == "") {
+                    var type = $(this).attr("type");
+                    for (var i = 0; i == i; i++) {
+                        if (textcountValue[i] == undefined) {
+                            textcountValue[i] = id + "~" + 1;
+                            break;
+                        }
+                        else {
+                            var str = textcountValue[i];
+                            var res = str.split("~");
+                            if (res[0] == id) {
+                                textcountValue[i] = id + "~" + (parseInt(res[1]) + 1);
+                                break;
+                            }
+                        }
+                    }
+                    commonVariable = id;
+                    loop = 1;
+                }
+                else {
+                    if (loop == textcount) {
+                        commonVariable = "";
+                    }
+
+                }
+            });
+            function get() {
+                debugger;
+                var a = 10;
+            }
+            function textCount(val) {
+                debugger;
+                var a = val;
+            }
+            $(".optionCount").change(function () {
+                debugger;
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                var type = $(this).attr("type");
+
+                for (var i = 0; i == i; i++) {
+                    if (optioncountvalue[i] == undefined) {
+                        optioncountvalue[i] = id + "~" + 1;
+                        break;
+                    }
+                    else {
+                        var str = optioncountvalue[i];
+                        var res = str.split("~");
+                        if (res[0] == id) {
+                            optioncountvalue[i] = id + "~" + (parseInt(res[1]) + 1);
+                            break;
+                        }
+                    }
+                }
+            });
+            $(".buttonCount").click(function () {
+
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                var type = $(this).attr("type");
+                for (var i = 0; i == i; i++) {
+                    if (buttoncountvalue[i] == undefined) {
+                        buttoncountvalue[i] = val + "~" + 1;
+                        break;
+                    }
+                    else {
+                        var str = buttoncountvalue[i];
+                        var res = str.split("~");
+                        if (res[0] == val) {
+                            buttoncountvalue[i] = val + "~" + (parseInt(res[1]) + 1);
+                            break;
+                        }
+                    }
+                }
+            });
+            $(".dropCount").change(function () {
+                debugger;
+                var val = $(this).val();
+                var id = $(this).attr("id");
+                var type = $(this).attr("type");
+            });
+
+            //starttime = date.getTime();
+
+        });
+        function show() {
+            debugger;
+            endtime = new Date();
+            var length = countvalue.length;
+            var count = "";
+            for (var i = 0; i < length; i++) {
+                count = count + "--" + countvalue[i];
+            }
+            var buttoncount = "";
+            for (var i = 0; i < length; i++) {
+                buttoncount = buttoncount + "--" + buttoncountvalue[i];
+            }
+            var shours = starttime.getHours();
+            var sminutes = starttime.getMinutes();
+            var sseconds = starttime.getSeconds();
+            var ehours = endtime.getHours();
+            var eminutes = endtime.getMinutes();
+            var eseconds = endtime.getSeconds();
+            if (shours < ehours) {
+                if (eminutes < sminutes) {
+                    sminutes = (60 - sminutes) + eminutes;
+                }
+                else {
+                    sminutes = eminutes - sminutes;
+
+                }
+            }
+            else {
+                sminutes = eminutes - sminutes;
+            }
+            if (eminutes < sminutes && (ehours - shours) == 1) {
+                shours = 0;
+            }
+            else
+                shours = ehours - shours;
+            var timeDiff = shours + " Hours:" + sminutes + " Minutes";
+            count = count + "// Time Difference" + timeDiff + "//  Button count" + buttoncount;
+            alert(count);
+        }
+        function getCount(val) {
+
+            for (var i = 0; i == i; i++) {
+                if (countvalue[i] == undefined) {
+                    countvalue[i] = val + "~" + 1;
+                    break;
+                }
+                else {
+                    var str = countvalue[i];
+                    var res = str.split("~");
+                    if (res[0] == val) {
+                        countvalue[i] = val + "~" + (parseInt(res[1]) + 1);
+                        break;
+                    }
+                }
+            }
+            return false;
+        }
+
+        //$(".textCount").blur(function () {
+        //    debugger;
+        //    var val = $(this).val();
+        //    var id = $(this).attr("id");
+        //});
+
+
+    </script>
+</body>
+
+</html>
+
