@@ -17,7 +17,7 @@
     <script src="~/Scripts/jquery-1.7.1.min.js"></script>
     <script src="~/Scripts/jquery-1.7.1.js"></script>
     <script src="~/Scripts/jquery-ui-1.8.20.js"></script>
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Form1</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +42,7 @@
 
 <body>
 
+    
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -285,22 +286,11 @@
                             <a href="@Url.Action("Index","WebAnalytics")"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="@Url.Action("Chart", "WebAnalytics")"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            
                         </li>
                         <li>
-                            <a href="href="@Url.Action("WebAnalytics", "movies")"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("WebAnalytics", "movies")"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="@Url.Action("Index", "WebAnalytics")"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                     </ul>
                 </div>
@@ -437,27 +427,22 @@
         var areainput;
         var loop = 0;
         var textcount = 0;
+        var hostName = "";
+        var pageName = "";
+        var browserName = "";
+
         window.onbeforeunload = confirmExit;
         function confirmExit() {
             debugger;
-            endtime = new Date();
-            var length = countvalue.length;
-            var count = "";
-            for (var i = 0; i < length; i++) {
-                count = count + "--" + countvalue[i];
-            }
-            var buttoncount = "";
-            for (var i = 0; i < length; i++) {
-                buttoncount = buttoncount + "--" + buttoncountvalue[i];
-            }
+            endtime = new Date();            
             var shours = starttime.getHours();
             var sminutes = starttime.getMinutes();
             var sseconds = starttime.getSeconds();
             var ehours = endtime.getHours();
             var eminutes = endtime.getMinutes();
             var eseconds = endtime.getSeconds();
-            var hostName="";
-            var pageName = "";
+            starttime=starttime.getHours()+":"+starttime.getMinutes();
+            endtime = endtime.getHours() + ":" + endtime.getMinutes();
             if (shours < ehours) {
                 if (eminutes < sminutes) {
                     sminutes = (60 - sminutes) + eminutes;
@@ -475,16 +460,29 @@
             }
             else
                 shours = ehours - shours;
-            var timeDiff = shours + " Hours:" + sminutes + " Minutes";
-            count = count + "// Time Difference" + timeDiff + "//  Button count" + buttoncount;
-            alert(count);
+            var timeDiff = shours + ":" + sminutes;
+            var postdata = {
+                Hostname: hostName,
+                Pagename: pageName,
+                PageUsageTime: timeDiff,
+                UserEnter: starttime,
+                UserExit: endtime,
+                ControlType: id,
+                ControlUsge: 1,
+                Content: "",
+                UserIp: "",
+                UserAgent: browserName
+            };
+            PostData(postdata)
             
         }
         $(document).ready(function () {
+            debugger;
+            
             hostName = window.location.hostname;
             pageName = $(document).find("title").text();
              firstInput = document.getElementsByTagName('input')
-            debugger;
+            
              areainput = document.getElementsByTagName('textarea')
             for (var i = 0; i < areainput.length; i++) {
                 $('#' + areainput[i].id).addClass("textCount");
@@ -523,29 +521,28 @@
                 else if (firstInput[i].type == "multiline") {
                     $('#' + firstInput[i].id).addClass("textCount");
                 }
-            }
+            }            
             starttime = new Date();
+            browserName = getBrowserName();
             $(".textCount").blur(function () {
                 loop=loop+1;
                 debugger;
                 var val = $(this).val();
                 var id = $(this).attr("id");
                 if (commonVariable == "") {
-                    var type = $(this).attr("type");
-                    for (var i = 0; i == i; i++) {
-                        if (textcountValue[i] == undefined) {
-                            textcountValue[i] = id + "~" + 1;
-                            break;
-                        }
-                        else {
-                            var str = textcountValue[i];
-                            var res = str.split("~");
-                            if (res[0] == id) {
-                                textcountValue[i] = id + "~" + (parseInt(res[1]) + 1);
-                                break;
-                            }
-                        }
-                    }
+                    var postdata = {
+                        Hostname: hostName,
+                        Pagename: pageName,
+                        PageUsageTime: "",
+                        UserEnter: "",
+                        UserExit: "",
+                        ControlType: id,
+                        ControlUsge: 1,
+                        Content: "",
+                        UserIp: "",
+                        UserAgent: browserName
+                    };
+                    PostData(postdata)
                     commonVariable = id;
                     loop = 1;
                 }
@@ -556,54 +553,40 @@
 
                 }
             });
-            function get() {
-                debugger;
-                var a = 10;
-            }
-            function textCount(val) {
-                debugger;
-                var a = val;
-            }
             $(".optionCount").change(function () {
                 debugger;
                 var val = $(this).val();
                 var id = $(this).attr("id");
                 var type = $(this).attr("type");
-
-                for (var i = 0; i == i; i++) {
-                    if (optioncountvalue[i] == undefined) {
-                        optioncountvalue[i] = id + "~" + 1;
-                        break;
-                    }
-                    else {
-                        var str = optioncountvalue[i];
-                        var res = str.split("~");
-                        if (res[0] == id) {
-                            optioncountvalue[i] = id + "~" + (parseInt(res[1]) + 1);
-                            break;
-                        }
-                    }
-                }
+                        var postdata = {
+                            Hostname: hostName,
+                            Pagename: pageName,
+                            PageUsageTime: "",
+                            UserEnter: "",
+                            UserExit: "",
+                            ControlType: id,
+                            ControlUsge: 1,
+                            Content: "",
+                            UserIp: "",
+                            UserAgent: browserName
+                        };                       
             });
             $(".buttonCount").click(function () {
-
                 var val = $(this).val();
                 var id = $(this).attr("id");
-                var type = $(this).attr("type");
-                for (var i = 0; i == i; i++) {
-                    if (buttoncountvalue[i] == undefined) {
-                        buttoncountvalue[i] = val + "~" + 1;
-                        break;
-                    }
-                    else {
-                        var str = buttoncountvalue[i];
-                        var res = str.split("~");
-                        if (res[0] == val) {
-                            buttoncountvalue[i] = val + "~" + (parseInt(res[1]) + 1);
-                            break;
-                        }
-                    }
-                }
+                var type = $(this).attr("type");                
+                        var postdata = {
+                            Hostname: hostName,
+                            Pagename: pageName,
+                            PageUsageTime: "",
+                            UserEnter: "",
+                            UserExit: "",
+                            ControlType: val,
+                            ControlUsge: 1,
+                            Content: "",
+                            UserIp: "",
+                            UserAgent: browserName
+                        };                       
             });
             $(".dropCount").change(function () {
                 debugger;
@@ -611,9 +594,6 @@
                 var id = $(this).attr("id");
                 var type = $(this).attr("type");
             });
-
-            //starttime = date.getTime();
-
         });
         function show() {
             debugger;
@@ -672,26 +652,9 @@
             }
             return false;
         }
-
-        //$(".textCount").blur(function () {
-        //    debugger;
-        //    var val = $(this).val();
-        //    var id = $(this).attr("id");
-        //});
         //Ajax call;
         function PostData(userdata) {
-            var postdata = {
-                Hostname: "",
-                Pagename: "",
-                PageUsageTime: "",
-                UserEnter: "",
-                UserExit: "",
-                ControlType: "",
-                ControlUsge: "",
-                Content: "",
-                UserIp: "",
-                UserAgent: ""
-            };
+            var postdata = userdata;
             $.ajax({
                 type: "POST",
                 url: 'http://localhost:52036/api/analytics/PostUserActivities',
@@ -709,6 +672,58 @@
                 }
             });
         }
+
+        function getBrowserName() {
+            if ($.browser.msie) {
+                userAgent = $.browser.version;
+                userAgent = userAgent.substring(0, userAgent.indexOf('.'));
+                version = userAgent;
+                browser = "Internet Explorer";
+            }
+
+            // Is this a version of Chrome?
+            if ($.browser.chrome) {
+                userAgent = userAgent.substring(userAgent.indexOf('chrome/') + 7);
+                userAgent = userAgent.substring(0, userAgent.indexOf('.'));
+                version = userAgent;
+                // If it is chrome then jQuery thinks it's safari so we have to tell it it isn't
+                $.browser.safari = false;
+                browser = "Chrome";
+            }
+
+            // Is this a version of Safari?
+            if ($.browser.safari) {
+                userAgent = userAgent.substring(userAgent.indexOf('safari/') + 7);
+                userAgent = userAgent.substring(0, userAgent.indexOf('.'));
+                version = userAgent;
+                browser = "Safari";
+            }
+
+            // Is this a version of Mozilla?
+            if ($.browser.mozilla) {
+                //Is it Firefox?
+                if (navigator.userAgent.toLowerCase().indexOf('firefox') != -1) {
+                    userAgent = userAgent.substring(userAgent.indexOf('firefox/') + 8);
+                    userAgent = userAgent.substring(0, userAgent.indexOf('.'));
+                    version = userAgent;
+                    browser = "Firefox"
+                }
+                    // If not then it must be another Mozilla
+                else {
+                    browser = "Mozilla (not Firefox)"
+                }
+            }
+
+            // Is this a version of Opera?
+            if ($.browser.opera) {
+                userAgent = userAgent.substring(userAgent.indexOf('version/') + 8);
+                userAgent = userAgent.substring(0, userAgent.indexOf('.'));
+                version = userAgent;
+                browser = "Opera";
+            }
+            return browser;
+        }
+
 
     </script>
 </body>
