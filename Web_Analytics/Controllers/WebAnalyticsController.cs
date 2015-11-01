@@ -19,6 +19,10 @@ namespace Web_Analytics.Controllers
         {
             return View("Test1");
         }
+        public ActionResult Reports()
+        {
+            return this.View();
+        }
 
     }
 }
