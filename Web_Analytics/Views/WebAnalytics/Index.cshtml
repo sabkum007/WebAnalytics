@@ -678,7 +678,37 @@
         //    var val = $(this).val();
         //    var id = $(this).attr("id");
         //});
-
+        //Ajax call;
+        function PostData(userdata) {
+            var postdata = {
+                Hostname: "",
+                Pagename: "",
+                PageUsageTime: "",
+                UserEnter: "",
+                UserExit: "",
+                ControlType: "",
+                ControlUsge: "",
+                Content: "",
+                UserIp: "",
+                UserAgent: ""
+            };
+            $.ajax({
+                type: "POST",
+                url: 'http://localhost:52036/api/analytics/PostUserActivities',
+                data: JSON.stringify(postdata),
+                dataType: "json",
+                contentType: "application/json;charset=utf-8",
+                success: function (response) {
+                    if (response == 'success')
+                        alert("s")
+                    else
+                        alert("f");
+                },
+                error: function (response, status, jXHR) {
+                    var resp = response;
+                }
+            });
+        }
 
     </script>
 </body>
